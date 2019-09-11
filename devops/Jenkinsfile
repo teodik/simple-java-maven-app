@@ -2,13 +2,13 @@ pipeline {
     agent any
     stages {
         stage('Build') {
-	tools{
-		maven 'localMaven'
-	}
-            steps {
-                //sh 'mvn -B -DskipTest clean package'
-		sh 'mvn clean install'
+            tools{
+                maven 'M3'
             }
+            steps {
+                sh 'mvn -B -DskipTest clean package'
+                //sh 'mvn clean install'
+                }
         }
         stage('Test') {
             steps {
