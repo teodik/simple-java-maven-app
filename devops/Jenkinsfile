@@ -6,7 +6,8 @@ pipeline {
 		maven 'localMaven'
 	}
             steps {
-                sh 'mvn -B -DskipTest clean package'
+                //sh 'mvn -B -DskipTest clean package'
+		sh 'mvn clean install'
             }
         }
         stage('Test') {
